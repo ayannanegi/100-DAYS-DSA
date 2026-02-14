@@ -11,7 +11,6 @@ int main() {
     scanf("%d", &k);
     int comparisons = 0;
     int foundIndex = -1;
-    
     for(int i = 0; i < n; i++) {
         comparisons++;
         if(arr[i] == k) {
