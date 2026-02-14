@@ -10,7 +10,7 @@ int main() {
     }
     scanf("%d", &pos);
     if(pos < 1 || pos > n) {
-       return 0;   // Invalid position, exit program
+       return 0; 
     }
        for(int i = pos - 1; i < n - 1; i++) {
         arr[i] = arr[i + 1];
