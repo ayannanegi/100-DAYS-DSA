@@ -4,7 +4,7 @@
 int main() {
     int n, pos, x;
     if (scanf("%d", &n) != 1) return 0;
-    int arr[n + 1]; // Allocate space for one extra element
+    int arr[n + 1];  // Allocate space for one extra element
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
