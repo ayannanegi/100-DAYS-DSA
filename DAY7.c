@@ -2,7 +2,6 @@
 //Input:- Single integer n Output:- Print the n-th Fibonacci number
 
 #include <stdio.h>
-
 int main() {
     int p, q;
     scanf("%d", &p);
