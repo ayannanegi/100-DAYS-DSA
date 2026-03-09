@@ -16,3 +16,6 @@ int main() {
         left++;
         right--;
     }
+    printf("%s\n", is Palindrome ? "YES" : "NO");
+    return 0;
+}
