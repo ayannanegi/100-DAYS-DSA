@@ -1,4 +1,5 @@
-//Problem: Delete First Occurrence of a Key - Implement using linked list with dynamic memory allocation.
+//Problem: Count Occurrences of an Element in Linked List - Implement using linked list with dynamic memory allocation.
+
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
@@ -11,40 +12,21 @@ struct Node* createNode(int data) {
     newNode->next = NULL;
     return newNode;
 }
-struct Node* deleteKey(struct Node* head, int key) {
-    // Handle head deletion
-    if (head != NULL && head->data == key) {
-        struct Node* temp = head;
-        head = head->next;
-        free(temp);
-        return head;
-    }   
-    struct Node* prev = NULL;
-    struct Node* current = head;
-    
-    while (current != NULL && current->data != key) {
-        prev = current;
+int countOccurrences(struct Node* head, int key) {
+    int count = 0;
+    struct Node* current = head;   
+    while (current != NULL) {
+        if (current->data == key) {
+            count++;
+        }
         current = current->next;
     }
-    if (current != NULL) {
-        prev->next = current->next;
-        free(current);
-    }   
-    return head;
-}
-void printList(struct Node* head) {
-    while (head != NULL) {
-        printf("%d", head->data);
-        if (head->next != NULL) printf(" ");
-        head = head->next;
-    }
-    printf("\n");
+    return count;
 }
 int main() {
     int n, value, key;
     struct Node* head = NULL;
-    struct Node* tail = NULL;
-    
+    struct Node* tail = NULL;   
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &value);
@@ -56,9 +38,7 @@ int main() {
             tail = newNode;
         }
     }
-    
     scanf("%d", &key);
-    head = deleteKey(head, key);
-    printList(head);
+    printf("%d\n", countOccurrences(head, key));
     return 0;
 }
